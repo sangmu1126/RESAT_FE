@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Timer</title>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        border: 2px solid;
+        border-radius: 10px;
+        padding: 30px;
+    }
+
+    #stopwatch {
+        font-size: 80px;
+        padding: 20px 40px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 2px solid;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    #buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="stopwatch">00:00:00</div>
+        <div id="buttons">
+            <button onclick="start()">Start</button>
+            <button onclick="stop()">Stop</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+<script>
+let timer; 
+let seconds = 0, minutes = 0, hours = 0;
+
+function start() {
+    clearInterval(timer); 
+    timer = setInterval(updateStopwatch, 1000); 
+}
+
+function stop() {
+    clearInterval(timer); 
+}
+
+function reset() {
+    clearInterval(timer); 
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    document.getElementById('stopwatch').innerText = '00:00:00'; 
+}
+
+function updateStopwatch() {
+    seconds++;
+
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+
+    const formattedTime = `${hours < 10 ? "0" + hours : hours}:${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+    document.getElementById('stopwatch').innerText = formattedTime;
+}
+</script>
+
+</body>
+</html>
