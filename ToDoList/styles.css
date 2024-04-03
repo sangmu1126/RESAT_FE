@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-area {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.input-area input[type="text"], .input-area select {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-area button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #45a049;
+}
+
+.filter-area {
+    margin-top: 50px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

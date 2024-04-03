@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TO-DO LIST</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="filter-area">
+        <label><input type="button" name="filter" value="all" checked> 전체</label>
+        <label><input type="button" name="filter" value="completed"> 해결</label>
+        <label><input type="button" name="filter" value="uncompleted"> 미해결</label>
+    </div>
+    <div class="container">
+        <h1>TO-DO LIST</h1>
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="할 일을 입력하세요...">
+            <select id="prioritySelect">
+                <option value="낮음">낮음</option>
+                <option value="보통">보통</option>
+                <option value="높음">높음</option>
+                <option value="아주 높음">아주 높음</option>
+            </select>
+            <button onclick="addTask()">추가하기</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="ToDoList.js"></script>
+</body>
+</html>
